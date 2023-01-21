@@ -16,22 +16,21 @@ The repository is broken down :
 
 # Assesment 
 
-This is the Java repository we'll work out of during this [training
-event](https://github.com/testdouble/contributing-tests/wiki/5-Day-Training-Agenda).
+https://github.com/havu1365/bigal-prasai_01_17.git
 
 ## Instructions
 
 Clone the repo:
 
-Git:
+Git: https://github.com/havu1365/bigal-prasai_01_17.git
 ```
-$ git clone git@github.com:testdouble/java-testing-example.git
-```
-
-
+$ git clone https://github.com/havu1365/bigal-prasai_01_17.git
 ```
 
-Or download a ZIP of main [manually](https://github.com/testdouble/java-testing-example/archive/main.zip) and expand the contents someplace on your system
+
+```
+
+Or download a ZIP of main [manually]https://github.com/havu1365/bigal-prasai_01_17/archive/refs/heads/main.zip  and expand the contents someplace on your system
 
 ## Prerequisites
 * Have Internet access
