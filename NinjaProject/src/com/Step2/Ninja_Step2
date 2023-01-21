@@ -1,4 +1,35 @@
-from locust import between, task, SequentialTaskSet, HttpUser
+# Weather API Testing
+
+Automation Testing 
+
+
+Requirement Correction :
+
+1) Added Parameter 
+	--> Date(day/month/year)
+ 
+
+ Approach API Testing (Using tools like Locust i.0, Jmeter, gatling, loadrunner, blazemetter etc)
+
+Prerequisites:
+	Python
+	Virtualenv
+	Flask
+	Locust
+
+ create a directory or folder for your project. 
+	mkdir locust-test
+	cd locust-test
+	virtualenv .
+	source bin/activate
+	python3 -m pip install Flask
+	pip3 install locust && locust -V
+
+
+
+create the main file called locustfile.py 
+
+ffrom locust import between, task, SequentialTaskSet, HttpUser
 
 
 def user_info_auth(self):
@@ -239,12 +270,3 @@ Here is a list of the most common chaos tests:
 • Disrupting syncs between system clocks.
 • Emulating I/O errors.
 • Causing sudden spikes in traffic.
-
-
-
-
-
-
-
-
-
