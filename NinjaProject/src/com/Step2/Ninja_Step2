@@ -1,0 +1,250 @@
+from locust import between, task, SequentialTaskSet, HttpUser
+
+
+def user_info_auth(self):
+    self.client.get(‘/users’, name=‘/users (auth)’,
+    headers={‘Authorization’: ‘Bearer ‘ + self.SessionToken})
+
+def get_headers():
+    """ It generated the api headers."""
+    headers = {
+        "Content-Type": "application/json"
+    }
+    return headers
+
+
+def get_api_payload():
+    """ It generated the body of request."""
+    payload = {
+    }
+    return payload
+
+class LocustClient(FastHttpUser):
+    host = "hhttps://ninja-weather.com/v1/weather"
+    wait_time = constant(0)
+
+    def __init__(self, environment):
+        """ Class constructor."""
+        super().__init__(environment)
+
+    def on_start(self):
+        """ on_start is called when a Locust start before any task is scheduled """
+        pass
+
+    def on_stop(self):
+        """ on_stop is called when the TaskSet is stopping """
+        pass
+
+    @task
+    def load_rest_api_based_service(self):
+        """ This method contains all the APIs that needs to be load tested for a service."""
+        headers = get_headers()
+
+        try:
+
+            # Build your query parameter for GET API requests
+            api_query_params = f"?name={'manoj'}"
+            api_payload = json.dumps(get_api_payload())
+
+    Date = " "
+    Search_by_City = {"city": Dallas}
+    Search_by_state_Country = {"state": Austin, "Country": USA, "city": Dallas}
+    Search_by_state_Country_city = {"state": Austin, "Country": USA}
+    Search_by_lat_lon = {"lat": {31.9018° W}, "lon": {99.9018° W}}"
+    Search_by_zip= {"Zip": 78613}
+
+    Neg_Search_by_City = {"city": abcds}
+    Neg_Search_by_state_Country = {"state": ninja, "Country": bigal, "city": texas}
+    Neg_Search_by_state_Country_city = {"state": hireme, "Country": hireme}
+    Neg_Search_by_lat_lon = {"lat": {Hireme}, "lon": {Hireme}}"
+    Neg_Search_by_zip= {"Zip": 7861356444477}
+
+
+class Weather(SequentialTaskSet):
+    #  Note --> postive case 
+    @task1
+    def get_weather by Search_by_zip(self):
+        with self.client.get(host?/?Search_by_zip/Date", catch_response=True) as response:
+            if response.status_code != 200:
+                response.failure("Failed to pull weather data, StatusCode: " + str(response.status_code))
+            else:
+                if "cloud_pct" in response.text:
+                    response.success()
+                else:
+                    response.failure("Unable to pull weather data, Text: " + response.text)
+    @task2              
+    def get_weather by Search_by_state_Country(self):
+        with self.client.get(host?/?Search_by_state_Country/Date", catch_response=True) as response:
+            if response.status_code != 200:
+                response.failure("Failed to pull weather data, StatusCode: " + str(response.status_code))
+            else:
+                if "cloud_pct" in response.text:
+                    response.success()
+                else:
+                    response.failure("Unable to pull weather data, Text: " + response.text)
+
+
+    @task3
+    def get_weather by Search_by_state_Country_city(self):
+        with self.client.get(host?/?Search_by_state_Country_city/Date", catch_response=True) as response:
+            if response.status_code != 200:
+                response.failure("Failed to pull weather data, StatusCode: " + str(response.status_code))
+            else:
+                if "cloud_pct" in response.text:
+                    response.success()
+                else:
+                    response.failure("Unable to pull weather data, Text: " + response.text)
+
+    @task4
+    def get_weather by Search_by_lat_lon(self):
+        with self.client.get(host?/?Search_by_lat_lon/Date", catch_response=True) as response:
+            if response.status_code != 200:
+                response.failure("Failed to pull weather data, StatusCode: " + str(response.status_code))
+            else:
+                if "cloud_pct" in response.text:
+                    response.success()
+                else:
+                    response.failure("Unable to pull weather data, Text: " + response.text)
+
+    @task5
+    def get_weather by Search_by_city(self):
+        with self.client.get(host?/?Search_by_city/Date", catch_response=True) as response:
+            if response.status_code != 200:
+                response.failure("Failed to pull weather data, StatusCode: " + str(response.status_code))
+            else:
+                if "cloud_pct" in response.text:
+                    response.success()
+                else:
+                    response.failure("Unable to pull weather data, Text: " + response.text)
+
+      @task6
+    def get_weather by Search_by_state_Country(self):
+        with self.client.get(host?/?Search_by_state_Country/Date", catch_response=True) as response:
+            if response.status_code != 200:
+                response.failure("Failed to pull weather data, StatusCode: " + str(response.status_code))
+            else:
+                if "cloud_pct" in response.text:
+                    response.success()
+                else:
+                    response.failure("Unable to pull weather data, Text: " + response.text)
+
+
+##############################################################################################
+    #  Note --> postive case 
+    @task7 
+    def get_weather by neg_Search_by_zip(self):
+        with self.client.get(host?/?neg_Search_by_zip/Date", catch_response=True) as response:
+            if response.status_code != 200:
+                response.failure("Failed to pull weather data, StatusCode: " + str(response.status_code))
+            else:
+                if "cloud_pct" in response.text:
+                    response.success()
+                else:
+                    response.failure("Unable to pull weather data, Text: " + response.text)
+        @task8 
+    def get_weather by neg__by_state_Country(self):
+        with self.client.get(host?/?neg_Search_by_state_Country/Date", catch_response=True) as response:
+            if response.status_code != 200:
+                response.failure("Failed to pull weather data, StatusCode: " + str(response.status_code))
+            else:
+                if "cloud_pct" in response.text:
+                    response.success()
+                else:
+                    response.failure("Unable to pull weather data, Text: " + response.text)
+
+
+    @task9 
+    def get_weather by neg_Search_by_state_Country_city(self):
+        with self.client.get(host?/?neg_Search_by_state_Country_city/Date", catch_response=True) as response:
+            if response.status_code != 200:
+                response.failure("Failed to pull weather data, StatusCode: " + str(response.status_code))
+            else:
+                if "cloud_pct" in response.text:
+                    response.success()
+                else:
+                    response.failure("Unable to pull weather data, Text: " + response.text)
+
+  @task10 
+    def get_weather by Sneg_earch_by_lat_lon(self):
+        with self.client.get(host?/?neg_Search_by_lat_lon/Date", catch_response=True) as response:
+            if response.status_code != 200:
+                response.failure("Failed to pull weather data, StatusCode: " + str(response.status_code))
+            else:
+                if "cloud_pct" in response.text:
+                    response.success()
+                else:
+                    response.failure("Unable to pull weather data, Text: " + response.text)
+
+    @task11
+    def get_weather by neg_Search_by_city(self):
+        with self.client.get(host?/?neg_Search_by_city/Date", catch_response=True) as response:
+            if response.status_code != 200:
+                response.failure("Failed to pull weather data, StatusCode: " + str(response.status_code))
+            else:
+                if "cloud_pct" in response.text:
+                    response.success()
+                else:
+                    response.failure("Unable to pull weather data, Text: " + response.text)
+
+    @task12 
+    def get_weather by neg_Search_by_state_Country(self):
+        with self.client.get(host?/?neg_Search_by_state_Country/Date", catch_response=True) as response:
+            if response.status_code != 200:
+                response.failure("Failed to pull weather data, StatusCode: " + str(response.status_code))
+            else:
+                if "cloud_pct" in response.text:
+                    response.success()
+                else:
+                    response.failure("Unable to pull weather data, Text: " + response.text)
+
+
+
+
+Performance Testing :
+
+Assumtion SLA is provided 
+ 
+ Prereq:
+     Setup prfiler agent to profile (dynatrcae , APM)
+     Create script 
+     create test Scenerio 
+     Tools 
+     Stable Environment 
+     Data setup
+
+Test Strategy 
+
+    1x load test
+    2x load Test
+    Stress load Test
+    Spike Tests
+
+
+Implement  Chaos Expirement • Why?
+
+• Identify weak points in a system.
+• See in real-time how a system responds to pressure.
+• Prepare the team for real failures.
+• Identify bugs that are yet to cause system-wide issues.
+
+
+Here is a list of the most common chaos tests:
+• Simulating the failure of a micro-component.
+• Turning a virtual machine off to see how a dependency reacts.
+• Simulating a high CPU load.
+• Disconnecting the system from the data center.
+• Injecting latency between services.
+• Randomly causing functions to throw exceptions (also known as function-based chaos).
+• Adding instructions to a program and allowing fault injection (also known as code insertion).
+• Disrupting syncs between system clocks.
+• Emulating I/O errors.
+• Causing sudden spikes in traffic.
+
+
+
+
+
+
+
+
+
